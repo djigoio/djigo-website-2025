@@ -2,11 +2,9 @@ import React from "react";
 import Social from "./Social";
 import { FaEnvelope, FaFileSignature, FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 
-interface SidebarProps {
-  setActiveSection: (section: number) => void;
-}
 
-const Sidebar: React.FC<SidebarProps> = ({ setActiveSection }) => {
+
+const Sidebar: React.FC = ({  }) => {
   // Define social icons with their respective URLs
   const socialLinks = [
     { icon: <FaEnvelope />, url: "mailto:antonio.djinav@gmail.com" },
@@ -25,7 +23,7 @@ const Sidebar: React.FC<SidebarProps> = ({ setActiveSection }) => {
         {socialLinks.map((link, idx) => (
           <button
             key={idx}
-            onClick={() => setActiveSection(idx)}
+            
             className="bg-transparent border-none cursor-pointer my-4 text-2xl"
           >
             <Social icon={link.icon} url={link.url} />

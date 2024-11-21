@@ -1,12 +1,5 @@
 import React from 'react';
 
-interface SubtitleProps {
-  text: string;
-}
-
-const Subtitle: React.FC<SubtitleProps> = ({ text }) => (
-  <p style={{fontSize: '16px' }}>{text}</p>
-);
 
 interface HeaderProps {
   title: string;

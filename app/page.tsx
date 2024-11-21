@@ -3,9 +3,6 @@
 import React, { useState } from "react";
 import Sidebar from "./components/Sidebar";
 import Menu from "./components/Menu";
-import Software from "./components/Software";
-import CS from "./components/CS";
-import Product from "./components/Product";
 import Header  from "./components/Header";
 import { Krona_One } from 'next/font/google'
 
@@ -15,7 +12,7 @@ const krona = Krona_One({
 })
 
 const Index: React.FC = () => {
-  const [activeSection, setActiveSection] = useState<number>(0);
+  const [setActiveSection] = useState<number>(0);
   const [subtitle, setSubtitle] = useState('');
 
   const handleMenuSelection = (section: string) => {
@@ -35,7 +32,7 @@ const Index: React.FC = () => {
   };
   return (
     <div style={{ display: "flex", height: "100vh" }}>
-        <Sidebar setActiveSection={setActiveSection} />
+        <Sidebar />
 
       {/* Main Content */}
    
