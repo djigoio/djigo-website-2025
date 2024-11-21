@@ -2,36 +2,31 @@ import React from "react";
 import Social from "./Social";
 import { FaEnvelope, FaFileSignature, FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 
+const Sidebar: React.FC = () => {
+ // Define social icons with their respective URLs
+ const socialLinks = [
+   { icon: <FaEnvelope />, url: "mailto:antonio.djinav@gmail.com" },
+   { icon: <FaLinkedin />, url: "https://www.linkedin.com/in/antonio-djigo/" },
+   { icon: <FaTwitter />, url: "https://x.com/brownio_" },
+   { icon: <FaGithub />, url: "https://github.com/djigoio" },
+   { icon: <FaFileSignature />, url: "https://dev.to/brownio" },
+ ];
 
-
-const Sidebar: React.FC = ({  }) => {
-  // Define social icons with their respective URLs
-  const socialLinks = [
-    { icon: <FaEnvelope />, url: "mailto:antonio.djinav@gmail.com" },
-    { icon: <FaLinkedin />, url: "https://www.linkedin.com/in/antonio-djigo/" },
-    { icon: <FaTwitter />, url: "https://x.com/brownio_" },
-    { icon: <FaGithub />, url: "https://github.com/djigoio" },
-    { icon: <FaFileSignature />, url: "https://dev.to/brownio" },
-    // { icon: <projects />, url: "https://twitter.com/example2" },
-    ,
-  ];
-
-  return (
-    <div className="absolute p-5 text-yellow-500 h-full">
-      {/* Render buttons for each section */}
-      <div className="flex flex-col items-center justify-center h-full w-full mt-auto text-right text-4xl">
-        {socialLinks.map((link, idx) => (
-          <button
-            key={idx}
-            
-            className="bg-transparent border-none cursor-pointer my-4 text-2xl"
-          >
-            <Social icon={link.icon} url={link.url} />
-          </button>
-        ))}
-      </div>
-    </div>
-  );
+ return (
+   <div className="absolute p-5 text-yellow-500 h-full">
+     {/* Render buttons for each section */}
+     <div className="flex flex-col items-center justify-center h-full w-full mt-auto text-right text-4xl">
+       {socialLinks.map((link, idx) => (
+         <button
+           key={idx}
+           className="bg-transparent border-none cursor-pointer my-4 text-2xl"
+         >
+           <Social icon={link.icon} url={link.url} />
+         </button>
+       ))}
+     </div>
+   </div>
+ );
 };
 
 export default Sidebar;
