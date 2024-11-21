@@ -12,7 +12,6 @@ const krona = Krona_One({
 })
 
 const Index: React.FC = () => {
-  const [setActiveSection] = useState<number>(0);
   const [subtitle, setSubtitle] = useState('');
 
   const handleMenuSelection = (section: string) => {
