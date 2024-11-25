@@ -47,7 +47,7 @@ const Index: React.FC = () => {
            <Header
         title="Hey ✨, I'm Antonio Djigo,"
         subtitle={subtitle}
-        logoSrc="/header.png"
+        logoSrc="/header.webp"
       />
         <Sidebar />
       <div className="" style={{width: '100%', marginTop: 'auto',     height: '100%', display:'flex', flexFlow:'column' }}>
