@@ -24,7 +24,7 @@ const Item: React.FC<ItemProps> = ({ text, className = '' }) => {
   };
 
   return (
-    <p className={`mb-10 text-base ${className}`}>
+    <p className={`mb-10 text-base md:xl:text-xl ${className}`}>
       {processText(text)}
     </p>
   );

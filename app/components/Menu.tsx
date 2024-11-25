@@ -12,7 +12,7 @@ const Menu: React.FC<MenuProps> = ({ onMenuSelect }) => {
   const [coverVisible, setCoverVisible] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => setCoverVisible(false), 500);
+    const timer = setTimeout(() => setCoverVisible(false), 700);
     return () => clearTimeout(timer);
   }, []);
 
@@ -23,7 +23,7 @@ const Menu: React.FC<MenuProps> = ({ onMenuSelect }) => {
     setTimeout(() => {
       setActiveSection(section); // Update active section after the transition
       setCoverVisible(false); // Hide the cover after the transition
-    }, 500);
+    }, 700);
   };
 
   // Render the active component based on the selected section
@@ -47,7 +47,7 @@ const Menu: React.FC<MenuProps> = ({ onMenuSelect }) => {
 
       {/* Yellow cover */}
       <div
-        className={`fixed top-0 left-0 w-full h-full bg-yellow-500 transform transition-transform duration-500 ${
+        className={`fixed top-0 left-0 w-full h-full bg-yellow-500 transform transition-transform duration-700 ${
           coverVisible ? "translate-y-0" : "translate-y-full"
         }`}
       />
@@ -57,8 +57,8 @@ const Menu: React.FC<MenuProps> = ({ onMenuSelect }) => {
         {/* Show button only if it's not the active section */}
         {activeSection !== "software" && (
           <button
-            className="w-full border-t-2 text-right border-white py-4 hover:bg-yellow-500 hover:text-black software"
-            style={{ fontSize: "20px", paddingRight: "20px" }}
+            className="w-full border-t-2 text-xl text-right border-neutral-100 py-4 hover:bg-yellow-500 hover:text-slate-950 software"
+            style={{ paddingRight: "20px" }}
             onClick={() => handleClick("software")}
           >
             Software Engineer.
@@ -66,8 +66,8 @@ const Menu: React.FC<MenuProps> = ({ onMenuSelect }) => {
         )}
         {activeSection !== "product" && (
           <button
-            className="w-full border-t-2 text-right border-white py-4 hover:bg-yellow-500 hover:text-black product"
-            style={{ fontSize: "20px", paddingRight: "20px" }}
+            className="w-full border-t-2 text-right text-xl border-neutral-100 py-4 hover:bg-yellow-500 hover:text-slate-950 product"
+            style={{ paddingRight: "20px" }}
             onClick={() => handleClick("product")}
           >
             Product Manager.
@@ -75,8 +75,8 @@ const Menu: React.FC<MenuProps> = ({ onMenuSelect }) => {
         )}
         {activeSection !== "customer" && (
           <button
-            className="w-full border-t-2 text-right border-white py-4 hover:bg-yellow-500 hover:text-black customer"
-            style={{ fontSize: "20px", paddingRight: "20px" }}
+            className="w-full border-t-2 text-xl text-right border-neutral-100 py-4 hover:bg-yellow-500 hover:text-slate-950 customer"
+            style={{ paddingRight: "20px" }}
             onClick={() => handleClick("customer")}
           >
             Customer Success.

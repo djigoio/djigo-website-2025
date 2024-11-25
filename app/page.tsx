@@ -34,20 +34,20 @@ const Index: React.FC = () => {
       {/* Main Content */}
       <div
         style={{
-          background: "black",
-          color: 'white',
+          backgroundColor: "rgb(2 6 23)",
+          color: 'rgb(245 245 245)',
           width: "100%",
           fontSize: "30px",
           display:'flex',
           flexFlow: 'column',
           justifyContent: 'space-between',
-          
-        }} className={krona.className}
+        }}   className={`bg-djigo ${krona.className}` }
+
       >
            <Header
         title="Hey ✨, I'm Antonio Djigo,"
         subtitle={subtitle}
-        logoSrc="/my-logo.svg"
+        logoSrc="/header.png"
       />
         <Sidebar />
       <div className="" style={{width: '100%', marginTop: 'auto',     height: '100%', display:'flex', flexFlow:'column' }}>
