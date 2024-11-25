@@ -31,23 +31,17 @@ const Index: React.FC = () => {
   };
   return (
     <div style={{ display: "flex", height: "100vh" }}>
-        <Sidebar />
-
       {/* Main Content */}
-   
-
       <div
         style={{
-          flex: 1,
           background: "black",
           color: 'white',
-          display: "flex",
-          flexWrap: "wrap",
-          alignItems: "center",
-          justifyContent: "center",
           width: "100%",
-          textAlign: "right",
           fontSize: "30px",
+          display:'flex',
+          flexFlow: 'column',
+          justifyContent: 'space-between',
+          
         }} className={krona.className}
       >
            <Header
@@ -55,9 +49,9 @@ const Index: React.FC = () => {
         subtitle={subtitle}
         logoSrc="/my-logo.svg"
       />
-
-      <div className="" style={{width: '100%', marginTop:'auto'}}>
-      <Menu onMenuSelect={handleMenuSelection} />
+        <Sidebar />
+      <div className="" style={{width: '100%', marginTop: 'auto',     height: '100%', display:'flex', flexFlow:'column' }}>
+        <Menu onMenuSelect={handleMenuSelection} />
       </div>
 
       </div>

@@ -2,14 +2,30 @@ import React from 'react';
 
 interface ItemProps {
   text: string;
-  highlightedWords?: string[];
   className?: string;
 }
 
 const Item: React.FC<ItemProps> = ({ text, className = '' }) => {
+  const processText = (input: string) => {
+    const parts = input.split(/(\*[^*]+\*)/g);
+    
+    return parts.map((part, index) => {
+      if (part.startsWith('*') && part.endsWith('*')) {
+        // Remove asterisks and wrap in highlighted span
+        const highlightedText = part.slice(1, -1);
+        return (
+          <span key={index} className="text-yellow-500">
+            {highlightedText}
+          </span>
+        );
+      }
+      return <span key={index}>{part}</span>;
+    });
+  };
+
   return (
-    <p className={className} style={{marginBottom: '40px', fontSize:'18px'}}>
-      {text}
+    <p className={`mb-10 text-base ${className}`}>
+      {processText(text)}
     </p>
   );
 };

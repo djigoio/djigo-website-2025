@@ -53,7 +53,7 @@ const Menu: React.FC<MenuProps> = ({ onMenuSelect }) => {
       />
 
       {/* Menu buttons */}
-      <div className="flex flex-col items-end justify-end">
+      <div className="flex flex-col items-end justify-end" style={{marginTop: 'auto'}}>
         {/* Show button only if it's not the active section */}
         {activeSection !== "software" && (
           <button
