@@ -10,7 +10,7 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ title, subtitle = '', logoSrc = '/header.png' }) => {
     return (
       <header className="shadow-md h-[100px] flex items-center justify-between px-6" style={{
-        alignSelf:'flex-start', width:'100%', marginTop: '20px',
+        alignSelf:'flex-start', width:'100%', marginTop: '20px', marginBottom:'20px'
         }}>
         <div className="flex items-center" style={{width: '100%', justifyContent: 'space-between'}}>
           <img src={logoSrc} alt="my head :)" className="h-8 mr-4" style={{

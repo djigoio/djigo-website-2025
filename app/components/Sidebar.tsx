@@ -13,12 +13,12 @@ const Sidebar: React.FC = () => {
  ];
 
  return (
-   <div className="fixed text-yellow-500 h-full" style={{left :'0',top: '-30px', marginLeft: '20px'}}>
+   <div className="fixed text-yellow-500 h-full ml-10" style={{left :'0',top: '-30px'}}>
      <div className="flex flex-col items-center justify-center h-full w-full mt-auto text-right text-4xl">
        {socialLinks.map((link, idx) => (
          <button
            key={idx}
-           className="bg-transparent border-none cursor-pointer my-4 text-2xl"
+           className="bg-transparent border-none cursor-pointer my-3 sm:my-4 text-2xl"
          >
            <Social icon={link.icon} url={link.url} title={link.title} />
          </button>
