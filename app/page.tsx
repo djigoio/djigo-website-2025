@@ -50,7 +50,9 @@ const Index: React.FC = () => {
         logoSrc="/header.webp"
       />
         <Sidebar />
-      <div className="" style={{width: '100%', marginTop: 'auto',     height: '100%', display:'flex', flexFlow:'column' }}>
+      <div className="" style={{width: '100%', marginTop: 'auto', height: '100%', display:'flex', flexFlow:'column',
+        overflow:'auto'
+       }}>
         <Menu onMenuSelect={handleMenuSelection} />
       </div>
 
