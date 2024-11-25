@@ -2,7 +2,8 @@ import React from "react";
 
 interface SocialProps {
   icon: React.ReactElement; // The icon component to render
-  url: string;             // The URL for the social media link
+  url: string;
+  title: string;             // The URL for the social media link
 }
 
 const Social: React.FC<SocialProps> = ({ icon, url, title }) => {
