@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Software from "./Software";
 import Product from "./Product";
 import CS from "./CS";
+import Projects from "./Projects";
 
 interface MenuProps {
   onMenuSelect: (section: string) => void;
@@ -36,7 +37,7 @@ const Menu: React.FC<MenuProps> = ({ onMenuSelect }) => {
       case "customer":
         return <CS />;
       default:
-        return null;
+        return <Projects />;
     }
   };
 
