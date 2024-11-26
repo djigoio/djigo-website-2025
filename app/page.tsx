@@ -30,7 +30,7 @@ const Index: React.FC = () => {
     }}, 500)
   };
   return (
-    <div style={{ display: "flex", height: "100vh" }}>
+    <main style={{ display: "flex" }}>
       {/* Main Content */}
       <div
         style={{
@@ -57,7 +57,7 @@ const Index: React.FC = () => {
       </div>
 
       </div>
-    </div>
+    </main>
   );
 };
 

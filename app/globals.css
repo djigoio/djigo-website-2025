@@ -19,8 +19,23 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
-
 }
+
+  html,
+  body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+
+  #__next,
+  main {
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+    height: 100%;
+  }
+
 
 button:focus {
   outline: none;
@@ -29,7 +44,7 @@ button:focus {
 .bg-djigo {
   background-color: #020617;
   opacity: 1;
-  background-image:  linear-gradient(30deg, #101010 12%, transparent 12.5%, transparent 87%, #101010 87.5%, #101010), linear-gradient(150deg, #101010 12%, transparent 12.5%, transparent 87%, #101010 87.5%, #101010), linear-gradient(30deg, #101010 12%, transparent 12.5%, transparent 87%, #101010 87.5%, #101010), linear-gradient(150deg, #101010 12%, transparent 12.5%, transparent 87%, #101010 87.5%, #101010), linear-gradient(60deg, #10101077 25%, transparent 25.5%, transparent 75%, #10101077 75%, #10101077), linear-gradient(60deg, #10101077 25%, transparent 25.5%, transparent 75%, #10101077 75%, #10101077);
+  background-image: linear-gradient(30deg, #101010 12%, transparent 12.5%, transparent 87%, #101010 87.5%, #101010), linear-gradient(150deg, #101010 12%, transparent 12.5%, transparent 87%, #101010 87.5%, #101010), linear-gradient(30deg, #101010 12%, transparent 12.5%, transparent 87%, #101010 87.5%, #101010), linear-gradient(150deg, #101010 12%, transparent 12.5%, transparent 87%, #101010 87.5%, #101010), linear-gradient(60deg, #10101077 25%, transparent 25.5%, transparent 75%, #10101077 75%, #10101077), linear-gradient(60deg, #10101077 25%, transparent 25.5%, transparent 75%, #10101077 75%, #10101077);
   background-size: 22px 39px;
   background-position: 0 0, 0 0, 11px 19px, 11px 19px, 0 0, 11px 19px;
 }
