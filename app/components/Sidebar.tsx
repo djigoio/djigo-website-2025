@@ -13,7 +13,7 @@ const Sidebar: React.FC = () => {
  ];
 
  return (
-<div className="fixed text-yellow-500 h-full ml-10 min-[380px]:top-[-30px]">
+<div className="fixed text-yellow-500 h-full ml-10 top-[-30px]">
 <div className="flex flex-col items-center justify-center h-full w-full mt-auto text-right text-4xl">
        {socialLinks.map((link, idx) => (
          <button
