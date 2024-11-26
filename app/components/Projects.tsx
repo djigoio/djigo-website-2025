@@ -19,7 +19,7 @@ const Projects: React.FC = () => {
         <div className="text-right default-content" style={{
             wordWrap: 'break-word', width: '65%', marginLeft: 'auto', paddingRight: '20px', marginTop: 'auto'
         }}>
-            <h3>Currently at:</h3>
+            <h3>Currently:</h3>
             <p><a href="https://directus.io" target="_blank" rel="noopener noreferrer">Directus.io</a> <br />The flexible backend for all of your projects.</p>
             {createTagPills('(CSM)(Rust)(Support)')}
             <h3 className='previously-title'>Previously:</h3>
