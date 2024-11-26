@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { useState, useEffect } from "react";
 
 interface SocialProps {
   icon: React.ReactElement; // The icon component to render
@@ -6,9 +8,27 @@ interface SocialProps {
   title: string             // The URL for the social media link
 }
 
-const isSmallPhone = window.innerHeight <= 500
-
 const Social: React.FC<SocialProps> = ({ icon, url, title }) => {
+  const [isSmallPhone, setIsSmallPhone] = useState(false);
+
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsSmallPhone(window.innerHeight <= 500);
+    };
+
+    // Check initial screen size
+    checkScreenSize();
+
+    // Add event listener for resize
+    window.addEventListener('resize', checkScreenSize);
+
+    // Cleanup event listener
+    return () => window.removeEventListener('resize', checkScreenSize);
+  }, []);
+
+  // Determine if the link should be hidden
+  const shouldHide = isSmallPhone && (title === "Twitter" || title === "My articles");
+
   return (
     <a
       href={url}
@@ -18,7 +38,7 @@ const Social: React.FC<SocialProps> = ({ icon, url, title }) => {
       className={`
         bg-yellow-500 p-2 rounded-full inline-block 
         hover:bg-neutral-100 focus:bg-yellow-600
-        ${isSmallPhone && title === "Twitter" || isSmallPhone && title === "My articles" ? "hidden" : ""}
+        ${shouldHide ? "hidden" : ""}
       `}
     >
       {/* Clone the icon and apply additional class styles */}
