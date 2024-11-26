@@ -13,7 +13,7 @@ const Social: React.FC<SocialProps> = ({ icon, url, title }) => {
 
   useEffect(() => {
     const checkScreenSize = () => {
-      setIsSmallPhone(window.innerHeight <= 500);
+      setIsSmallPhone(window.innerHeight <= 600);
     };
 
     // Check initial screen size
