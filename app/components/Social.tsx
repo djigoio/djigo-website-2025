@@ -10,24 +10,28 @@ interface SocialProps {
 
 const Social: React.FC<SocialProps> = ({ icon, url, title }) => {
   const [isSmallPhone, setIsSmallPhone] = useState(false);
+  const [isLandscape, setIsLandscape] = useState(false);
 
   useEffect(() => {
     const checkScreenSize = () => {
       setIsSmallPhone(window.innerHeight <= 800);
+      setIsLandscape(window.innerWidth > window.innerHeight);
     };
 
-    // Check initial screen size
+    // Check initial screen size and orientation
     checkScreenSize();
 
-    // Add event listener for resize
+    // Add event listeners for resize and orientation change
     window.addEventListener('resize', checkScreenSize);
 
     // Cleanup event listener
-    return () => window.removeEventListener('resize', checkScreenSize);
+    return () => {
+      window.removeEventListener('resize', checkScreenSize);
+    };
   }, []);
 
   // Determine if the link should be hidden
-  const shouldHide = isSmallPhone && (title === "Twitter" || title === "My articles");
+  const shouldHide = isSmallPhone && (title === "Twitter" || title === "My articles") && !isLandscape;
 
   return (
     <a
