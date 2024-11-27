@@ -23,7 +23,7 @@ const Index: React.FC = () => {
         setSubtitle('Product Manager.');
         break;
       case 'customer':
-        setSubtitle('Customer Success.');
+        setSubtitle('CS Manager.');
         break;
       default:
         setSubtitle('');
