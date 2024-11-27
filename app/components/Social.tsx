@@ -3,35 +3,48 @@
 import React, { useState, useEffect } from "react";
 
 interface SocialProps {
-  icon: React.ReactElement; // The icon component to render
+  icon: React.ReactElement;
   url: string;
-  title: string             // The URL for the social media link
+  title: string;
 }
 
 const Social: React.FC<SocialProps> = ({ icon, url, title }) => {
-  const [isSmallPhone, setIsSmallPhone] = useState(false);
-  const [isLandscape, setIsLandscape] = useState(false);
+  const [isSmallPhone, setIsSmallPhone] = useState<boolean>(false);
+  const [isLandscape, setIsLandscape] = useState<boolean>(false);
 
   useEffect(() => {
     const checkScreenSize = () => {
-      setIsSmallPhone(window.innerHeight <= 800);
-      setIsLandscape(window.innerWidth > window.innerHeight);
+      const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
+      // Detect tablets specifically based on screen dimensions (iPads or tablets)
+      const isTablet = window.innerHeight >= 820 && window.innerHeight <= 1200 && window.innerWidth <= 1280;
+
+      setIsSmallPhone(!isTablet && window.innerHeight <= 800); // Exclude tablets from being "small phones"
+      setIsLandscape(
+        isMobile &&
+        !isTablet && // Exclude tablets from landscape restrictions
+        window.innerWidth > window.innerHeight &&
+        window.innerWidth <= 1024 // Typical max width for phones in landscape
+      );
     };
 
     // Check initial screen size and orientation
     checkScreenSize();
 
     // Add event listeners for resize and orientation change
-    window.addEventListener('resize', checkScreenSize);
+    window.addEventListener("resize", checkScreenSize);
 
     // Cleanup event listener
     return () => {
-      window.removeEventListener('resize', checkScreenSize);
+      window.removeEventListener("resize", checkScreenSize);
     };
   }, []);
 
   // Determine if the link should be hidden
-  const shouldHide = isSmallPhone && (title === "Twitter" || title === "My articles") && !isLandscape;
+  const shouldHide =
+    isSmallPhone &&
+    (title === "Twitter" || title === "My articles") &&
+    !isLandscape;
 
   return (
     <a
@@ -45,7 +58,6 @@ const Social: React.FC<SocialProps> = ({ icon, url, title }) => {
         ${shouldHide ? "hidden" : ""}
       `}
     >
-      {/* Clone the icon and apply additional class styles */}
       {React.cloneElement(icon, { className: "h-6 w-6 text-slate-950" })}
     </a>
   );
