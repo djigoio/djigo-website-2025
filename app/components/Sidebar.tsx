@@ -1,10 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Social from "./Social";
 import { FaEnvelope, FaFileSignature, FaGithub, FaLaptopCode, FaLinkedin, FaTwitter } from "react-icons/fa";
 
 const Sidebar: React.FC = () => {
-  const [isTablet, setIsTablet] = useState<boolean>(false);
-
   const socialLinks = [
     { icon: <FaEnvelope />, url: "mailto:antonio.djinav@gmail.com", title: "Email me" },
     { icon: <FaLinkedin />, url: "https://www.linkedin.com/in/antonio-djigo/", title: " Linkedin" },
@@ -14,40 +12,16 @@ const Sidebar: React.FC = () => {
     { icon: <FaLaptopCode />, url: "https://bento.me/djigo", title: "See my projects" },
   ];
 
-  useEffect(() => {
-    const checkIfTablet = () => {
-      const isTabletSize =
-        window.innerHeight >= 820 &&
-        window.innerHeight <= 1200 &&
-        window.innerWidth <= 1280;
-
-      setIsTablet(isTabletSize);
-    };
-
-    // Run on mount
-    checkIfTablet();
-
-    // Add event listener for resize
-    window.addEventListener("resize", checkIfTablet);
-
-    // Cleanup event listener
-    return () => {
-      window.removeEventListener("resize", checkIfTablet);
-    };
-  }, []);
-
   return (
-    <div
-      className={`fixed text-yellow-500 h-full ml-10 top-[-30px] 
-        ${isTablet ? "" : "landscape:bottom-0 landscape:h-auto landscape:top-[unset]"}
-      `}
-    >
-      <div
-        className={`flex flex-col items-center justify-center h-full w-full mt-auto text-right text-4xl 
-          ${isTablet ? "" : "landscape:flex-row landscape:gap-[30px] landscape:h-auto"}
-          sm:flex-col
-        `}
-      >
+    <div className="fixed text-yellow-500 h-full ml-10 top-[-30px] 
+      max-[1024px]:landscape:bottom-0 
+      max-[1024px]:landscape:h-auto 
+      max-[1024px]:landscape:top-[unset]">
+      <div className="flex flex-col items-center justify-center h-full w-full mt-auto text-right text-4xl
+        max-[1024px]:landscape:flex-row 
+        max-[1024px]:landscape:gap-[30px] 
+        max-[1024px]:landscape:h-auto
+        sm:flex-col">
         {socialLinks.map((link, idx) => (
           <button
             key={idx}
