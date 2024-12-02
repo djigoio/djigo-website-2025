@@ -18,10 +18,36 @@ const Menu: React.FC<MenuProps> = ({ onMenuSelect }) => {
   }, []);
 
   const handleClick = (section: string) => {
+    // Reset all scrollable elements to their top position
+    const resetScroll = (element: HTMLElement) => {
+      if (element.scrollTop !== 0) {
+        element.scrollTop = 0;
+      }
+    };
+
     onMenuSelect(section); // Notify parent of the selected section
     setCoverVisible(true);
 
     setTimeout(() => {
+      // Reset window scroll
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+
+      // Find and reset all scrollable elements
+      const scrollableElements = document.querySelectorAll('*');
+      scrollableElements.forEach((el) => {
+        const computedStyle = window.getComputedStyle(el);
+        const overflowY = computedStyle.overflowY;
+        const overflowX = computedStyle.overflowX;
+
+        // Check if the element is scrollable
+        if (
+          (overflowY === 'scroll' || overflowY === 'auto') || 
+          (overflowX === 'scroll' || overflowX === 'auto')
+        ) {
+          resetScroll(el as HTMLElement);
+        }
+      });
+
       setActiveSection(section); // Update active section after the transition
       setCoverVisible(false); // Hide the cover after the transition
     }, 700);
