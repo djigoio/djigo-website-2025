@@ -7,7 +7,7 @@ const Projects: React.FC = () => {
         const tags = text.match(regex);
         if (tags) {
             return tags.map((tag) => (
-                <span key={tag} className="bg-yellow-500 text-black px-2 py-1 rounded-full text-xs mr-2">
+                <span key={tag} className="bg-yellow-500 text-black px-2 py-1 rounded-full text-xs mr-2 pill">
                     {tag.slice(1, -1)}
                 </span>
             ));

@@ -107,3 +107,7 @@ h3.previously-title{
   margin-top: 30px;
   font-size: 16px;
 }
+
+.pill:last-of-type{
+  margin: 0;
+}

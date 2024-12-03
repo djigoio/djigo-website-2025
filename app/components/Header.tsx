@@ -14,7 +14,7 @@ const Header: React.FC<HeaderProps> = ({ title, subtitle = '', logoSrc = 'https:
       <div className="flex items-center" style={{ width: '100%', justifyContent: 'space-between' }}>
         <a href="https://djigo.dev">
           <img src={logoSrc} alt="my head :)" className="h-8 mr-4" style={{
-            width: '100px', height: 'auto', rotate: '10deg', borderBottom: "1px solid rgb(234 179 8)"
+            width: '120px', height: 'auto', rotate: '10deg', borderBottom: "1px solid rgb(234 179 8)"
           }} />
         </a>
         <div>
