@@ -13,21 +13,24 @@
     --foreground: #ededed;
   }
 }
-
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
 body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
+  max-width: 1920px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-  html,
-  body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-  }
+
 
   #__next,
   main {

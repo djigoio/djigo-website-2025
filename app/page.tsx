@@ -34,14 +34,13 @@ const Index: React.FC = () => {
       {/* Main Content */}
       <div
         style={{
-          backgroundColor: "rgb(2 6 23)",
           color: 'rgb(245 245 245)',
           width: "100%",
           fontSize: "30px",
           display:'flex',
           flexFlow: 'column',
           justifyContent: 'space-between',
-        }}   className={`bg-djigo ${krona.className}` }
+        }}   className={`${krona.className}` }
 
       >
            <Header
