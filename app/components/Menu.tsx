@@ -84,8 +84,7 @@ const Menu: React.FC<MenuProps> = ({ onMenuSelect }) => {
         {/* Show button only if it's not the active section */}
         {activeSection !== "software" && (
           <button
-            className="w-full border-t-2 text-xl text-right border-neutral-100 py-4 hover:bg-yellow-500 hover:text-slate-950 software"
-            style={{ paddingRight: "20px" }}
+            className="w-full border-t-2 text-xl text-right border-neutral-100 py-4 hover:bg-yellow-500 hover:text-slate-950 software pr-6 sm:pr-9"
             onClick={() => handleClick("software")}
           >
             Software Engineer.
@@ -93,8 +92,7 @@ const Menu: React.FC<MenuProps> = ({ onMenuSelect }) => {
         )}
         {activeSection !== "product" && (
           <button
-            className="w-full border-t-2 text-right text-xl border-neutral-100 py-4 hover:bg-yellow-500 hover:text-slate-950 product"
-            style={{ paddingRight: "20px" }}
+            className="w-full border-t-2 text-right text-xl border-neutral-100 py-4 hover:bg-yellow-500 hover:text-slate-950 product pr-6 sm:pr-9"
             onClick={() => handleClick("product")}
           >
             Product Manager.
@@ -102,8 +100,7 @@ const Menu: React.FC<MenuProps> = ({ onMenuSelect }) => {
         )}
         {activeSection !== "customer" && (
           <button
-            className="w-full border-t-2 text-xl text-right border-neutral-100 py-4 hover:bg-yellow-500 hover:text-slate-950 customer"
-            style={{ paddingRight: "20px" }}
+            className="w-full border-t-2 text-xl text-right border-neutral-100 py-4 hover:bg-yellow-500 hover:text-slate-950 customer pr-6 sm:pr-9"
             onClick={() => handleClick("customer")}
           >
             Customer Success.

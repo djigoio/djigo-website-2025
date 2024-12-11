@@ -16,9 +16,7 @@ const Projects: React.FC = () => {
     };
 
     return (
-        <div className="text-right default-content" style={{
-            wordWrap: 'break-word', marginBottom: '40px', width: '65%', marginLeft: 'auto', paddingRight: '20px', marginTop: 'auto'
-        }}>
+        <div className="text-right default-content pr-6 sm:pr-9" style={{ wordWrap: 'break-word', width: '65%', marginLeft:'auto', marginTop:'auto'}}>
             <h3>Currently:</h3>
             <p><a href="https://directus.io" target="_blank" rel="noopener noreferrer">Directus.io</a> <br />The flexible backend for all of your projects.</p>
             {createTagPills('(CSM)(Rust)(Support)')}

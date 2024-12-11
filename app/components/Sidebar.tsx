@@ -13,7 +13,7 @@ const Sidebar: React.FC = () => {
   ];
 
   return (
-    <div className="fixed text-yellow-500 h-full ml-10 top-[-30px] 
+    <div className="fixed text-yellow-500 h-full pl-6 sm:pl-9 top-[-30px] 
       max-[1024px]:landscape:bottom-0 
       max-[1024px]:landscape:h-auto 
       max-[1024px]:landscape:top-[unset]">
