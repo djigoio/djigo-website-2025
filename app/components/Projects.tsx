@@ -20,7 +20,7 @@ const Projects: React.FC = () => {
             <h3>Currently:</h3>
             <p><a href="https://directus.io" target="_blank" rel="noopener noreferrer">Directus.io</a> <br />The flexible backend for all of your projects.</p>
             {createTagPills('(CSM)(Rust)(Support)')}
-            <h3 className='previously-title'>Previously:</h3>
+            <h3 className='previously-title'>Before:</h3>
             <p className='previously'>
                 <a href="https://kiwi.com" target="_blank" rel="noopener noreferrer">Kiwi.com</a>
             </p>

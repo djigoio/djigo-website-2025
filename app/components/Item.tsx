@@ -14,7 +14,7 @@ const Item: React.FC<ItemProps> = ({ text, className = '' }) => {
         // Remove asterisks and wrap in highlighted span
         const highlightedText = part.slice(1, -1);
         return (
-          <span key={index} className="text-yellow-500">
+          <span key={index} className="bold text-yellow-500">
             {highlightedText}
           </span>
         );

@@ -46,7 +46,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-djigo`}
+      //${geistSans.variable} ${geistMono.variable}
+        className={` antialiased bg-djigo`}
       >
         <GoogleAnalytics gaId="G-E084630H3Y" />
 

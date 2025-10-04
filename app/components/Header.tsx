@@ -18,8 +18,8 @@ const Header: React.FC<HeaderProps> = ({ title, subtitle = '', logoSrc = 'https:
           }} />
         </a>
         <div>
-          <h1 className="font-bold text-right" style={{ fontSize: '1.3rem' }}>{title}</h1>
-          {subtitle && <p className='text-base text-right text-yellow-500'>{subtitle}</p>}
+          <h1 className="font-bold text-right" style={{ fontSize: '1.3rem', marginBottom: '8px' }}>{title}</h1>
+          {subtitle && <p className='text-base italic text-right text-yellow-500'>{subtitle}</p>}
         </div>
       </div>
     </header>
