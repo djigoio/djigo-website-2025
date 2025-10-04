@@ -40,7 +40,7 @@ const Index: React.FC = () => {
           display:'flex',
           flexFlow: 'column',
           justifyContent: 'space-between',
-        }}   className={`${krona.className}` }
+        }}   
 
       >
            <Header
