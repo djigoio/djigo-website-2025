@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import posthog from "posthog-js";
 
 interface SocialProps {
   icon: React.ReactElement;
@@ -46,14 +47,19 @@ const Social: React.FC<SocialProps> = ({ icon, url, title }) => {
     (title === "Twitter" || title === "My articles") &&
     !isLandscape;
 
+  const handleClick = () => {
+    posthog.capture("social_link_clicked", { title, url });
+  };
+
   return (
     <a
       href={url}
       target="_blank"
       title={title}
       rel="noopener noreferrer"
+      onClick={handleClick}
       className={`
-        bg-yellow-500 p-2 rounded-full inline-block 
+        bg-yellow-500 p-2 rounded-full inline-block
         hover:bg-neutral-100 focus:bg-yellow-600
         ${shouldHide ? "hidden" : ""}
       `}

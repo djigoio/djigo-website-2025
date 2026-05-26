@@ -1,4 +1,7 @@
+"use client";
+
 import React, { useState, useEffect } from "react";
+import posthog from "posthog-js";
 import Software from "./Software";
 import Product from "./Product";
 import CS from "./CS";
@@ -25,6 +28,7 @@ const Menu: React.FC<MenuProps> = ({ onMenuSelect }) => {
       }
     };
 
+    posthog.capture("section_selected", { section });
     onMenuSelect(section); // Notify parent of the selected section
     setCoverVisible(true);
 
